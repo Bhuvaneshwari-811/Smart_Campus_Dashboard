@@ -29,7 +29,7 @@ body {
     transition: background 0.4s, color 0.4s;
 }
 
-/* Header using Flexbox */
+/* Header */
 .header {
     background: var(--primary);
     color: white;
@@ -82,6 +82,19 @@ button {
     container-type: inline-size;
 }
 
+/* Card Entrance Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Dashboard Cards */
 .card {
     background: var(--card-bg);
@@ -89,6 +102,7 @@ button {
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: transform 0.3s;
+    animation: fadeIn 0.8s ease-in;
 }
 
 .card:hover {
@@ -100,7 +114,7 @@ button {
     margin-bottom: 12px;
 }
 
-/* Using :has() selector */
+/* Using :has() Selector */
 .card:has(h3:hover) {
     border: 2px solid var(--primary);
 }
@@ -114,14 +128,14 @@ footer {
     margin-top: 30px;
 }
 
-/* Tablet */
+/* Tablet Responsive */
 @media (max-width: 800px) {
     .dashboard {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/* Mobile */
+/* Mobile Responsive */
 @media (max-width: 550px) {
     .header {
         flex-direction: column;
